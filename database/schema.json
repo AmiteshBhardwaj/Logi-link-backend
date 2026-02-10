@@ -1,0 +1,44 @@
+{
+  "database_meta": {
+    "platform": "Zapier Tables",
+    "table_name": "Logi Link AI Live Data",
+    "last_updated": "2026-02-10T11:31:45Z"
+  },
+  "schema": [
+    {
+      "table_name": "shipments",
+      "primary_key": "shipment_id",
+      "columns": [
+        {
+          "name": "Shipment ID",
+          "api_key": "shipment_id",
+          "type": "STRING",
+          "constraints": {
+            "unique": true,
+            "pattern": "^SHP-\\d{6}$"
+          },
+          "example": "SHP-001542"
+        },
+        {
+          "name": "Status",
+          "api_key": "status",
+          "type": "ENUM",
+          "options": [
+            "In Transit",
+            "Delivered",
+            "Delayed"
+          ],
+          "ui_component": "status_pill",
+          "example": "In Transit"
+        },
+        {
+          "name": "Current Location",
+          "api_key": "current_location",
+          "type": "STRING",
+          "format": "City, State (ISO 3166-2)",
+          "example": "Memphis, TN"
+        }
+      ]
+    }
+  ]
+}
