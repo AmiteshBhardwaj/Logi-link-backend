@@ -2,26 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logi-Link AI Portal</title>
+    <style>
+        /* Simple declarative styling for the container */
+        body { margin: 0; padding: 0; background-color: #f4f4f9; }
+        .chat-container { height: 100vh; width: 100%; }
+    </style>
 </head>
 <body>
-    <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
-    <zapier-interfaces-chatbot-embed is-popup='false' chatbot-id='YOUR_BOT_ID'></zapier-interfaces-chatbot-embed>
-
-    <script>
-        // Vapi Voice Handler Initialization
-        var vapiInstance = null;
-        const assistant_id = "YOUR_VAPI_ID"; 
-        
-        (function() {
-            var script = document.createElement('script');
-            script.src = "https://cdn.jsdelivr.net/gh/vapi-ai/client-sdk-web@main/dist/vapi.min.js";
-            script.defer = true;
-            script.addEventListener('load', function() {
-                vapiInstance = new Vapi("YOUR_PUBLIC_KEY");
-            });
-            document.head.appendChild(script);
-        })();
-    </script>
+    <div class="chat-container">
+        <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
+        <zapier-interfaces-chatbot-embed 
+            is-popup='false' 
+            chatbot-id='YOUR_BOT_ID_HERE'
+            height='100%'
+            width='100%'
+        ></zapier-interfaces-chatbot-embed>
+    </div>
 </body>
 </html>
